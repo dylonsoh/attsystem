@@ -11,7 +11,7 @@ public partial class Homepage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Label17.Text = "Watch here for update success";
+        Label17.Text = "";
     }
 
     protected void updateAttendance_Click(object sender, EventArgs e)

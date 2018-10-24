@@ -19,7 +19,7 @@ public partial class ClassList : System.Web.UI.Page
         SqlConnection conn2 = new SqlConnection("Data Source = attdanceserver.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
         conn2.Open();
 
-        SqlCommand cmd = new SqlCommand("INSERT into Class (Class_ID, Date, sectionalTitle1,combinedTitle1,sectionalTitle2,combinedTitle2,sectionalTitle3,combinedTitle3,sectionalTitle4, combinedTitle4) values ('"+classListBox.SelectedValue.Trim()+"','"+datesSelectedTextBox.Text.Trim()+"',N'"+sectionalTitleText1.Text.Trim()+"',N'"+combinedTitleText1.Text.Trim()+"',N'"+sectionalTitleText2.Text.Trim()+"',N'"+combinedTitleText2.Text.Trim()+"',N'"+sectionalTitleText3.Text.Trim()+"',N'"+combinedTitleText3.Text.Trim()+"',N'"+sectionalTitleText4.Text.Trim()+"',N'"+combinedTitleText4.Text.Trim()+"')");
+        SqlCommand cmd = new SqlCommand("INSERT into class (Class_ID, Date, sectionalTitle1,combinedTitle1,sectionalTitle2,combinedTitle2,sectionalTitle3,combinedTitle3,sectionalTitle4, combinedTitle4) values ('"+classListBox.SelectedValue.Trim()+"','"+datesSelectedTextBox.Text.Trim()+"',N'"+sectionalTitleText1.Text.Trim()+"',N'"+combinedTitleText1.Text.Trim()+"',N'"+sectionalTitleText2.Text.Trim()+"',N'"+combinedTitleText2.Text.Trim()+"',N'"+sectionalTitleText3.Text.Trim()+"',N'"+combinedTitleText3.Text.Trim()+"',N'"+sectionalTitleText4.Text.Trim()+"',N'"+combinedTitleText4.Text.Trim()+"')");
         cmd.Connection = conn2;
         cmd.ExecuteNonQuery();
 
