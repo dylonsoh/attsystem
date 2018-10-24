@@ -11,7 +11,7 @@ public partial class Homepage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Label17.Text = "Watch here for update success";
+        Label17.Text = "";
     }
 
     protected void updateAttendance_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ public partial class Homepage : System.Web.UI.Page
     void updateRow (string studentNum, string markStatus)
     {
         //Label17.Text = Label17.Text + "\r" + markStatus.Trim() + "\n" + studentNum.Trim() + "\n" + classPickedDropDownList.SelectedValue.Trim() + "\n" + Convert.ToDateTime(songCalendar.SelectedDate.ToShortDateString()).Date.ToString("dd/MMM/yyyy");
-        SqlConnection connAtt = new SqlConnection("Data Source = attdanceserver.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
+        SqlConnection connAtt = new SqlConnection("Data Source = calvaryattendance2018fiscalyear.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
         connAtt.Open();
 
         SqlCommand cmdAtt = new SqlCommand("UPDATE [Class Attendance] SET Attend = '" + markStatus.Trim() + "', Student_ID = '" + studentNum.Trim() + "', Class_ID = '" + classPickedDropDownList.SelectedValue.Trim() + "' , Date = '" + Convert.ToDateTime(songCalendar.SelectedDate.ToShortDateString()).Date.ToString("dd/MMM/yyyy") + "'  WHERE Student_ID = '" + studentNum.Trim() + "' AND Class_ID = '" + classPickedDropDownList.SelectedValue.Trim() + "' AND Date = '" + Convert.ToDateTime(songCalendar.SelectedDate.ToShortDateString()).Date.ToString("dd/MMM/yyyy") + "'");

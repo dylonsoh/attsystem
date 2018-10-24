@@ -13,7 +13,7 @@ public partial class NameList : System.Web.UI.Page
 
     protected void addPerson_Click(object sender, EventArgs e)
     {
-        SqlConnection conn = new SqlConnection("Data Source = attdanceserver.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
+        SqlConnection conn = new SqlConnection("Data Source = calvaryattendance2018fiscalyear.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
         conn.Open();
         SqlCommand cmd = new SqlCommand("INSERT into PersonalParticulars (Name,Class_ID,Student_ID) values (N'"+nameTextBox.Text+"','"+classDropDownList.SelectedValue.Trim()+"','"+studentIDTextBox.Text.Trim()+"')");
         cmd.Connection = conn;
@@ -24,7 +24,7 @@ public partial class NameList : System.Web.UI.Page
 
     protected void updatePerson_Click(object sender, EventArgs e)
     {
-       SqlConnection conn2 = new SqlConnection("Data Source = attdanceserver.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
+        SqlConnection conn2 = new SqlConnection("Data Source = calvaryattendance2018fiscalyear.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
         conn2.Open();
         SqlCommand cmd = new SqlCommand("UPDATE PersonalParticulars SET Name = N'" + nameTextBox.Text.Trim() + "', Class_ID = '" + classDropDownList.SelectedValue.Trim() + "',Student_ID =  '" + studentIDTextBox.Text.Trim() + "' WHERE Name = N'"+nameListBox.SelectedValue.Trim()+"' AND Class_ID = '"+classDropDownList.SelectedValue.Trim()+"' AND Student_ID = '"+studentIDListBox.SelectedValue.Trim()+"'");
         cmd.Connection = conn2;
@@ -35,7 +35,7 @@ public partial class NameList : System.Web.UI.Page
 
     protected void deletePerson_Click(object sender, EventArgs e)
     {
-        SqlConnection conn3 = new SqlConnection("Data Source = attdanceserver.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
+        SqlConnection conn3 = new SqlConnection("Data Source = calvaryattendance2018fiscalyear.cgiynybjhwhm.ap-southeast-1.rds.amazonaws.com;" + "Initial Catalog = Calvary Attendance; Persist Security Info=True;User ID=dyraven;Password=Asdfgh1!");
         conn3.Open();
         SqlCommand cmd = new SqlCommand("DELETE FROM PersonalParticulars WHERE Name = N'" + nameListBox.SelectedValue.Trim() + "' AND Class_ID = '" + classDropDownList.SelectedValue.Trim() + "' AND Student_ID = '" + studentIDListBox.SelectedValue.Trim() + "'");
         cmd.Connection = conn3;
